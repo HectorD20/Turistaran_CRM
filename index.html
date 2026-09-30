@@ -1,0 +1,2785 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Turistarán | ERP & CRM</title>
+
+    <!--
+        ============================================================
+        TURISTARÁN ERP / CRM
+        PARTE 1 — ESTRUCTURA HTML BASE
+
+        En esta primera versión:
+        - Solo estructura HTML.
+        - No CSS personalizado.
+        - No JavaScript.
+        - Los IDs y clases se conservarán para las siguientes partes.
+        ============================================================
+    -->
+
+    <meta
+        name="description"
+        content="Sistema integral de gestión empresarial de Turistarán"
+    >
+</head>
+
+<body>
+
+    <!-- ==========================================================
+         APLICACIÓN PRINCIPAL
+         ========================================================== -->
+
+    <div id="app" class="app">
+
+        <!-- ======================================================
+             SIDEBAR
+             ====================================================== -->
+
+        <aside id="sidebar" class="sidebar">
+
+            <!-- LOGOTIPO / MARCA -->
+            <div class="sidebar-brand">
+
+                <div class="brand-logo">
+                    T
+                </div>
+
+                <div class="brand-info">
+                    <h1>Turistarán</h1>
+                    <span>ERP & CRM</span>
+                </div>
+
+            </div>
+
+
+            <!-- NAVEGACIÓN PRINCIPAL -->
+            <nav id="main-navigation" class="main-navigation">
+
+                <!-- DASHBOARD -->
+                <div class="nav-section">
+
+                    <button
+                        class="nav-item nav-item-dashboard active"
+                        data-page="dashboard"
+                        type="button"
+                    >
+                        <span class="nav-icon">📊</span>
+                        <span class="nav-text">Dashboard</span>
+                    </button>
+
+                </div>
+
+
+                <!-- ==================================================
+                     VENTAS
+                     ================================================== -->
+
+                <div class="nav-section">
+
+                    <button
+                        class="nav-section-title"
+                        type="button"
+                        data-menu="ventas"
+                        aria-expanded="true"
+                    >
+                        <span class="nav-icon">💼</span>
+                        <span class="nav-text">Ventas</span>
+                        <span class="nav-arrow">⌄</span>
+                    </button>
+
+
+                    <div
+                        id="submenu-ventas"
+                        class="nav-submenu open"
+                    >
+
+                        <button
+                            class="nav-item"
+                            type="button"
+                            data-page="leads"
+                        >
+                            <span class="nav-subicon">◦</span>
+                            <span class="nav-text">Leads</span>
+                        </button>
+
+                        <button
+                            class="nav-item"
+                            type="button"
+                            data-page="clientes"
+                        >
+                            <span class="nav-subicon">◦</span>
+                            <span class="nav-text">Clientes / Empresas</span>
+                        </button>
+
+                        <button
+                            class="nav-item"
+                            type="button"
+                            data-page="cotizaciones"
+                        >
+                            <span class="nav-subicon">◦</span>
+                            <span class="nav-text">Cotizaciones</span>
+                        </button>
+
+                        <button
+                            class="nav-item"
+                            type="button"
+                            data-page="seguimientos"
+                        >
+                            <span class="nav-subicon">◦</span>
+                            <span class="nav-text">Seguimientos</span>
+                        </button>
+
+                        <button
+                            class="nav-item"
+                            type="button"
+                            data-page="oportunidades"
+                        >
+                            <span class="nav-subicon">◦</span>
+                            <span class="nav-text">Oportunidades / Historial</span>
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ==================================================
+                     COMPRAS
+                     ================================================== -->
+
+                <div class="nav-section">
+
+                    <button
+                        class="nav-section-title"
+                        type="button"
+                        data-menu="compras"
+                        aria-expanded="true"
+                    >
+                        <span class="nav-icon">📦</span>
+                        <span class="nav-text">Compras</span>
+                        <span class="nav-arrow">⌄</span>
+                    </button>
+
+
+                    <div
+                        id="submenu-compras"
+                        class="nav-submenu open"
+                    >
+
+                        <button
+                            class="nav-item"
+                            type="button"
+                            data-page="proveedores"
+                        >
+                            <span class="nav-subicon">◦</span>
+                            <span class="nav-text">Proveedores</span>
+                        </button>
+
+                        <button
+                            class="nav-item"
+                            type="button"
+                            data-page="solicitudes-compra"
+                        >
+                            <span class="nav-subicon">◦</span>
+                            <span class="nav-text">Solicitudes de compra</span>
+                        </button>
+
+                        <button
+                            class="nav-item"
+                            type="button"
+                            data-page="ordenes-compra"
+                        >
+                            <span class="nav-subicon">◦</span>
+                            <span class="nav-text">Órdenes de compra</span>
+                        </button>
+
+                        <button
+                            class="nav-item"
+                            type="button"
+                            data-page="recepciones"
+                        >
+                            <span class="nav-subicon">◦</span>
+                            <span class="nav-text">Recepciones</span>
+                        </button>
+
+                        <button
+                            class="nav-item"
+                            type="button"
+                            data-page="inventario"
+                        >
+                            <span class="nav-subicon">◦</span>
+                            <span class="nav-text">Inventario</span>
+                        </button>
+
+                        <button
+                            class="nav-item"
+                            type="button"
+                            data-page="three-way-matching"
+                        >
+                            <span class="nav-subicon">◦</span>
+                            <span class="nav-text">3-Way Matching</span>
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ==================================================
+                     PROYECTOS
+                     ================================================== -->
+
+                <div class="nav-section">
+
+                    <button
+                        class="nav-section-title"
+                        type="button"
+                        data-menu="proyectos"
+                        aria-expanded="true"
+                    >
+                        <span class="nav-icon">🏗️</span>
+                        <span class="nav-text">Proyectos</span>
+                        <span class="nav-arrow">⌄</span>
+                    </button>
+
+
+                    <div
+                        id="submenu-proyectos"
+                        class="nav-submenu open"
+                    >
+
+                        <button
+                            class="nav-item"
+                            type="button"
+                            data-page="proyectos"
+                        >
+                            <span class="nav-subicon">◦</span>
+                            <span class="nav-text">Proyectos</span>
+                        </button>
+
+                        <button
+                            class="nav-item"
+                            type="button"
+                            data-page="tareas"
+                        >
+                            <span class="nav-subicon">◦</span>
+                            <span class="nav-text">Tareas</span>
+                        </button>
+
+                        <button
+                            class="nav-item"
+                            type="button"
+                            data-page="progreso"
+                        >
+                            <span class="nav-subicon">◦</span>
+                            <span class="nav-text">Progreso</span>
+                        </button>
+
+                        <button
+                            class="nav-item"
+                            type="button"
+                            data-page="materiales-proyecto"
+                        >
+                            <span class="nav-subicon">◦</span>
+                            <span class="nav-text">Materiales</span>
+                        </button>
+
+                        <button
+                            class="nav-item"
+                            type="button"
+                            data-page="costos-proyecto"
+                        >
+                            <span class="nav-subicon">◦</span>
+                            <span class="nav-text">Costos</span>
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ==================================================
+                     FINANZAS Y CONTABILIDAD
+                     ================================================== -->
+
+                <div class="nav-section">
+
+                    <button
+                        class="nav-section-title"
+                        type="button"
+                        data-menu="finanzas"
+                        aria-expanded="true"
+                    >
+                        <span class="nav-icon">💰</span>
+                        <span class="nav-text">Finanzas y Contabilidad</span>
+                        <span class="nav-arrow">⌄</span>
+                    </button>
+
+
+                    <div
+                        id="submenu-finanzas"
+                        class="nav-submenu open"
+                    >
+
+                        <button
+                            class="nav-item"
+                            type="button"
+                            data-page="finanzas"
+                        >
+                            <span class="nav-subicon">◦</span>
+                            <span class="nav-text">Finanzas</span>
+                        </button>
+
+                        <button
+                            class="nav-item"
+                            type="button"
+                            data-page="contabilidad"
+                        >
+                            <span class="nav-subicon">◦</span>
+                            <span class="nav-text">Contabilidad</span>
+                        </button>
+
+                        <button
+                            class="nav-item"
+                            type="button"
+                            data-page="cuentas-cobrar"
+                        >
+                            <span class="nav-subicon">◦</span>
+                            <span class="nav-text">Cuentas por cobrar</span>
+                        </button>
+
+                        <button
+                            class="nav-item"
+                            type="button"
+                            data-page="cuentas-pagar"
+                        >
+                            <span class="nav-subicon">◦</span>
+                            <span class="nav-text">Cuentas por pagar</span>
+                        </button>
+
+                        <button
+                            class="nav-item"
+                            type="button"
+                            data-page="costeo"
+                        >
+                            <span class="nav-subicon">◦</span>
+                            <span class="nav-text">Costeo</span>
+                        </button>
+
+                        <button
+                            class="nav-item"
+                            type="button"
+                            data-page="reportes-financieros"
+                        >
+                            <span class="nav-subicon">◦</span>
+                            <span class="nav-text">Reportes</span>
+                        </button>
+
+                        <button
+                            class="nav-item"
+                            type="button"
+                            data-page="proyecciones"
+                        >
+                            <span class="nav-subicon">◦</span>
+                            <span class="nav-text">Proyecciones</span>
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ==================================================
+                     RH
+                     ================================================== -->
+
+                <div class="nav-section">
+
+                    <button
+                        class="nav-section-title"
+                        type="button"
+                        data-menu="rh"
+                        aria-expanded="true"
+                    >
+                        <span class="nav-icon">👥</span>
+                        <span class="nav-text">RH</span>
+                        <span class="nav-arrow">⌄</span>
+                    </button>
+
+
+                    <div
+                        id="submenu-rh"
+                        class="nav-submenu open"
+                    >
+
+                        <button
+                            class="nav-item"
+                            type="button"
+                            data-page="personal"
+                        >
+                            <span class="nav-subicon">◦</span>
+                            <span class="nav-text">Personal</span>
+                        </button>
+
+                        <button
+                            class="nav-item"
+                            type="button"
+                            data-page="asistencias"
+                        >
+                            <span class="nav-subicon">◦</span>
+                            <span class="nav-text">Asistencias</span>
+                        </button>
+
+                        <button
+                            class="nav-item"
+                            type="button"
+                            data-page="contrataciones"
+                        >
+                            <span class="nav-subicon">◦</span>
+                            <span class="nav-text">Contrataciones</span>
+                        </button>
+
+                        <button
+                            class="nav-item"
+                            type="button"
+                            data-page="vacaciones-permisos"
+                        >
+                            <span class="nav-subicon">◦</span>
+                            <span class="nav-text">Vacaciones / Permisos</span>
+                        </button>
+
+                        <button
+                            class="nav-item"
+                            type="button"
+                            data-page="nomina"
+                        >
+                            <span class="nav-subicon">◦</span>
+                            <span class="nav-text">Nómina</span>
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ==================================================
+                     ADMINISTRACIÓN
+                     ================================================== -->
+
+                <div class="nav-section">
+
+                    <button
+                        class="nav-section-title"
+                        type="button"
+                        data-menu="administracion"
+                        aria-expanded="true"
+                    >
+                        <span class="nav-icon">⚙️</span>
+                        <span class="nav-text">Administración</span>
+                        <span class="nav-arrow">⌄</span>
+                    </button>
+
+
+                    <div
+                        id="submenu-administracion"
+                        class="nav-submenu open"
+                    >
+
+                        <button
+                            class="nav-item"
+                            type="button"
+                            data-page="usuarios"
+                        >
+                            <span class="nav-subicon">◦</span>
+                            <span class="nav-text">Usuarios</span>
+                        </button>
+
+                        <button
+                            class="nav-item"
+                            type="button"
+                            data-page="roles-permisos"
+                        >
+                            <span class="nav-subicon">◦</span>
+                            <span class="nav-text">Roles y permisos</span>
+                        </button>
+
+                        <button
+                            class="nav-item"
+                            type="button"
+                            data-page="configuracion"
+                        >
+                            <span class="nav-subicon">◦</span>
+                            <span class="nav-text">Configuración</span>
+                        </button>
+
+                        <button
+                            class="nav-item"
+                            type="button"
+                            data-page="auditoria"
+                        >
+                            <span class="nav-subicon">◦</span>
+                            <span class="nav-text">Auditoría</span>
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </nav>
+
+
+            <!-- ======================================================
+                 INFORMACIÓN INFERIOR DEL SIDEBAR
+                 ====================================================== -->
+
+            <div class="sidebar-footer">
+
+                <div class="system-status">
+                    <span class="status-dot"></span>
+                    <span>Sistema operativo</span>
+                </div>
+
+                <div class="sidebar-version">
+                    Turistarán ERP v1.0
+                </div>
+
+            </div>
+
+        </aside>
+
+
+        <!-- ==========================================================
+             CONTENIDO PRINCIPAL
+             ========================================================== -->
+
+        <main id="main-content" class="main-content">
+
+
+            <!-- ======================================================
+                 HEADER
+                 ====================================================== -->
+
+            <header id="main-header" class="main-header">
+
+                <div class="header-left">
+
+                    <!-- BOTÓN PARA SIDEBAR EN PANTALLAS PEQUEÑAS -->
+                    <button
+                        id="sidebar-toggle"
+                        class="sidebar-toggle"
+                        type="button"
+                        aria-label="Abrir menú"
+                    >
+                        ☰
+                    </button>
+
+
+                    <!-- TÍTULO DE LA PÁGINA -->
+                    <div class="page-heading">
+
+                        <span
+                            id="breadcrumb-section"
+                            class="breadcrumb-section"
+                        >
+                            Inicio
+                        </span>
+
+                        <h2 id="page-title">
+                            Dashboard
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="header-right">
+
+                    <!-- BUSCADOR GLOBAL -->
+                    <div
+                        id="global-search-container"
+                        class="global-search-container"
+                    >
+
+                        <span class="search-icon">
+                            🔎
+                        </span>
+
+                        <input
+                            id="global-search"
+                            class="global-search"
+                            type="search"
+                            placeholder="Buscar en Turistarán..."
+                            autocomplete="off"
+                        >
+
+                    </div>
+
+
+                    <!-- NOTIFICACIONES -->
+                    <button
+                        id="notifications-button"
+                        class="header-action"
+                        type="button"
+                        aria-label="Notificaciones"
+                    >
+
+                        <span class="header-action-icon">
+                            🔔
+                        </span>
+
+                        <span
+                            id="notification-count"
+                            class="notification-count"
+                        >
+                            0
+                        </span>
+
+                    </button>
+
+
+                    <!-- PERFIL -->
+                    <button
+                        id="user-profile-button"
+                        class="user-profile"
+                        type="button"
+                    >
+
+                        <span
+                            id="user-avatar"
+                            class="user-avatar"
+                        >
+                            C
+                        </span>
+
+                        <span class="user-info">
+
+                            <strong id="user-name">
+                                Carolina
+                            </strong>
+
+                            <small id="user-role">
+                                Administrador
+                            </small>
+
+                        </span>
+
+                        <span class="profile-arrow">
+                            ⌄
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </header>
+
+
+            <!-- ======================================================
+                 CONTENIDO DINÁMICO
+                 ====================================================== -->
+
+            <section
+    id="page-dashboard"
+    class="page-view dashboard-page"
+    data-page-view="dashboard"
+>
+
+    <!-- ==================================================
+         DASHBOARD — ENCABEZADO
+         ================================================== -->
+
+    <div class="page-header">
+
+        <div class="page-header-content">
+
+            <div>
+                <span class="page-eyebrow">
+                    TURISTARÁN ERP & CRM
+                </span>
+
+                <h1 class="page-main-title">
+                    Dashboard
+                </h1>
+
+                <p class="page-description">
+                    Resumen general de la operación de Turistarán.
+                </p>
+            </div>
+
+            <div class="page-header-actions">
+
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    id="dashboard-refresh"
+                >
+                    <span class="btn-icon">↻</span>
+                    Actualizar
+                </button>
+
+                <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-page="cotizaciones"
+                >
+                    <span class="btn-icon">＋</span>
+                    Nueva cotización
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==================================================
+         KPIs PRINCIPALES
+         ================================================== -->
+
+    <div class="dashboard-kpi-grid">
+
+        <!-- VENTAS -->
+
+        <article
+            class="kpi-card"
+            data-dashboard-card="ventas"
+        >
+
+            <div class="kpi-card-top">
+
+                <div class="kpi-icon">
+                    $
+                </div>
+
+                <span class="kpi-label">
+                    Ventas
+                </span>
+
+            </div>
+
+            <div class="kpi-value" id="kpi-ventas">
+                $0.00
+            </div>
+
+            <div class="kpi-footer">
+
+                <span
+                    class="kpi-trend"
+                    id="kpi-ventas-trend"
+                >
+                    —
+                </span>
+
+                <span class="kpi-period">
+                    Este mes
+                </span>
+
+            </div>
+
+        </article>
+
+
+        <!-- COTIZACIONES -->
+
+        <article
+            class="kpi-card"
+            data-dashboard-card="cotizaciones"
+        >
+
+            <div class="kpi-card-top">
+
+                <div class="kpi-icon">
+                    Q
+                </div>
+
+                <span class="kpi-label">
+                    Cotizaciones abiertas
+                </span>
+
+            </div>
+
+            <div
+                class="kpi-value"
+                id="kpi-cotizaciones"
+            >
+                0
+            </div>
+
+            <div class="kpi-footer">
+
+                <span
+                    class="kpi-trend"
+                    id="kpi-cotizaciones-trend"
+                >
+                    —
+                </span>
+
+                <span class="kpi-period">
+                    Pendientes
+                </span>
+
+            </div>
+
+        </article>
+
+
+        <!-- PROYECTOS -->
+
+        <article
+            class="kpi-card"
+            data-dashboard-card="proyectos"
+        >
+
+            <div class="kpi-card-top">
+
+                <div class="kpi-icon">
+                    P
+                </div>
+
+                <span class="kpi-label">
+                    Proyectos activos
+                </span>
+
+            </div>
+
+            <div
+                class="kpi-value"
+                id="kpi-proyectos"
+            >
+                0
+            </div>
+
+            <div class="kpi-footer">
+
+                <span
+                    class="kpi-trend"
+                    id="kpi-proyectos-trend"
+                >
+                    —
+                </span>
+
+                <span class="kpi-period">
+                    En ejecución
+                </span>
+
+            </div>
+
+        </article>
+
+
+        <!-- CLIENTES -->
+
+        <article
+            class="kpi-card"
+            data-dashboard-card="clientes"
+        >
+
+            <div class="kpi-card-top">
+
+                <div class="kpi-icon">
+                    C
+                </div>
+
+                <span class="kpi-label">
+                    Clientes
+                </span>
+
+            </div>
+
+            <div
+                class="kpi-value"
+                id="kpi-clientes"
+            >
+                0
+            </div>
+
+            <div class="kpi-footer">
+
+                <span
+                    class="kpi-trend"
+                    id="kpi-clientes-trend"
+                >
+                    —
+                </span>
+
+                <span class="kpi-period">
+                    Registrados
+                </span>
+
+            </div>
+
+        </article>
+
+
+        <!-- COMPRAS -->
+
+        <article
+            class="kpi-card"
+            data-dashboard-card="compras"
+        >
+
+            <div class="kpi-card-top">
+
+                <div class="kpi-icon">
+                    $
+                </div>
+
+                <span class="kpi-label">
+                    Compras
+                </span>
+
+            </div>
+
+            <div
+                class="kpi-value"
+                id="kpi-compras"
+            >
+                $0.00
+            </div>
+
+            <div class="kpi-footer">
+
+                <span
+                    class="kpi-trend"
+                    id="kpi-compras-trend"
+                >
+                    —
+                </span>
+
+                <span class="kpi-period">
+                    Este mes
+                </span>
+
+            </div>
+
+        </article>
+
+
+        <!-- UTILIDAD -->
+
+        <article
+            class="kpi-card kpi-card-highlight"
+            data-dashboard-card="utilidad"
+        >
+
+            <div class="kpi-card-top">
+
+                <div class="kpi-icon">
+                    %
+                </div>
+
+                <span class="kpi-label">
+                    Utilidad estimada
+                </span>
+
+            </div>
+
+            <div
+                class="kpi-value"
+                id="kpi-utilidad"
+            >
+                $0.00
+            </div>
+
+            <div class="kpi-footer">
+
+                <span
+                    class="kpi-trend"
+                    id="kpi-utilidad-trend"
+                >
+                    —
+                </span>
+
+                <span class="kpi-period">
+                    Este mes
+                </span>
+
+            </div>
+
+        </article>
+
+    </div>
+
+
+    <!-- ==================================================
+         CONTENIDO PRINCIPAL
+         ================================================== -->
+
+    <div class="dashboard-main-grid">
+
+
+        <!-- =================================================
+             RESUMEN DE VENTAS
+             ================================================= -->
+
+        <section class="dashboard-panel dashboard-sales-panel">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <span class="panel-eyebrow">
+                        VENTAS
+                    </span>
+
+                    <h2 class="panel-title">
+                        Resumen de ventas
+                    </h2>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="text-button"
+                    data-page="cotizaciones"
+                >
+                    Ver cotizaciones →
+                </button>
+
+            </div>
+
+
+            <div class="sales-summary">
+
+                <div class="sales-total">
+
+                    <span class="sales-total-label">
+                        Total vendido
+                    </span>
+
+                    <strong
+                        id="dashboard-sales-total"
+                    >
+                        $0.00
+                    </strong>
+
+                </div>
+
+
+                <div class="sales-chart-container">
+
+                    <div
+                        id="sales-chart"
+                        class="dashboard-chart"
+                    >
+
+                        <div class="chart-placeholder">
+
+                            <div class="chart-placeholder-icon">
+                                ↗
+                            </div>
+
+                            <span>
+                                Gráfica de ventas
+                            </span>
+
+                            <small>
+                                Se conectará con cotizaciones y ventas.
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             PROYECTOS
+             ================================================= -->
+
+        <section class="dashboard-panel dashboard-projects-panel">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <span class="panel-eyebrow">
+                        PROYECTOS
+                    </span>
+
+                    <h2 class="panel-title">
+                        Proyectos activos
+                    </h2>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="text-button"
+                    data-page="proyectos"
+                >
+                    Ver proyectos →
+                </button>
+
+            </div>
+
+
+            <div
+                id="dashboard-project-list"
+                class="dashboard-project-list"
+            >
+
+                <div class="empty-state">
+
+                    <div class="empty-state-icon">
+                        P
+                    </div>
+
+                    <h3>
+                        No hay proyectos registrados
+                    </h3>
+
+                    <p>
+                        Los proyectos creados desde Ventas
+                        aparecerán aquí.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-page="proyectos"
+                    >
+                        Ir a proyectos
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </div>
+
+
+    <!-- ==================================================
+         SEGUNDA FILA
+         ================================================== -->
+
+    <div class="dashboard-secondary-grid">
+
+
+        <!-- =================================================
+             ALERTAS
+             ================================================= -->
+
+        <section class="dashboard-panel">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <span class="panel-eyebrow">
+                        ATENCIÓN
+                    </span>
+
+                    <h2 class="panel-title">
+                        Alertas pendientes
+                    </h2>
+
+                </div>
+
+                <span
+                    class="panel-counter"
+                    id="dashboard-alert-count"
+                >
+                    0
+                </span>
+
+            </div>
+
+
+            <div
+                id="dashboard-alert-list"
+                class="alert-list"
+            >
+
+                <div class="empty-state compact">
+
+                    <div class="empty-state-icon">
+                        ✓
+                    </div>
+
+                    <h3>
+                        Sin alertas pendientes
+                    </h3>
+
+                    <p>
+                        Aquí aparecerán tareas que requieran
+                        atención.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             ACTIVIDAD RECIENTE
+             ================================================= -->
+
+        <section class="dashboard-panel">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <span class="panel-eyebrow">
+                        ACTIVIDAD
+                    </span>
+
+                    <h2 class="panel-title">
+                        Actividad reciente
+                    </h2>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="text-button"
+                    id="dashboard-activity-button"
+                >
+                    Ver todo →
+                </button>
+
+            </div>
+
+
+            <div
+                id="dashboard-activity-list"
+                class="activity-list"
+            >
+
+                <div class="empty-state compact">
+
+                    <div class="empty-state-icon">
+                        •
+                    </div>
+
+                    <h3>
+                        Sin actividad reciente
+                    </h3>
+
+                    <p>
+                        Las acciones realizadas en el sistema
+                        aparecerán aquí.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </div>
+
+
+    <!-- ==================================================
+         ACCESOS RÁPIDOS
+         ================================================== -->
+
+    <section class="dashboard-panel dashboard-quick-actions">
+
+        <div class="panel-header">
+
+            <div>
+
+                <span class="panel-eyebrow">
+                    ACCESOS RÁPIDOS
+                </span>
+
+                <h2 class="panel-title">
+                    ¿Qué deseas hacer?
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="quick-actions-grid">
+
+            <button
+                type="button"
+                class="quick-action"
+                data-page="leads"
+            >
+
+                <span class="quick-action-icon">
+                    +
+                </span>
+
+                <span class="quick-action-content">
+
+                    <strong>
+                        Nuevo lead
+                    </strong>
+
+                    <small>
+                        Registrar prospecto
+                    </small>
+
+                </span>
+
+                <span class="quick-action-arrow">
+                    →
+                </span>
+
+            </button>
+
+
+            <button
+                type="button"
+                class="quick-action"
+                data-page="clientes"
+            >
+
+                <span class="quick-action-icon">
+                    C
+                </span>
+
+                <span class="quick-action-content">
+
+                    <strong>
+                        Nuevo cliente
+                    </strong>
+
+                    <small>
+                        Registrar empresa o cliente
+                    </small>
+
+                </span>
+
+                <span class="quick-action-arrow">
+                    →
+                </span>
+
+            </button>
+
+
+            <button
+                type="button"
+                class="quick-action"
+                data-page="cotizaciones"
+            >
+
+                <span class="quick-action-icon">
+                    Q
+                </span>
+
+                <span class="quick-action-content">
+
+                    <strong>
+                        Nueva cotización
+                    </strong>
+
+                    <small>
+                        Crear propuesta comercial
+                    </small>
+
+                </span>
+
+                <span class="quick-action-arrow">
+                    →
+                </span>
+
+            </button>
+
+
+            <button
+                type="button"
+                class="quick-action"
+                data-page="proyectos"
+            >
+
+                <span class="quick-action-icon">
+                    P
+                </span>
+
+                <span class="quick-action-content">
+
+                    <strong>
+                        Nuevo proyecto
+                    </strong>
+
+                    <small>
+                        Crear proyecto operativo
+                    </small>
+
+                </span>
+
+                <span class="quick-action-arrow">
+                    →
+                </span>
+
+            </button>
+
+
+            <button
+                type="button"
+                class="quick-action"
+                data-page="solicitudes-compra"
+            >
+
+                <span class="quick-action-icon">
+                    $
+                </span>
+
+                <span class="quick-action-content">
+
+                    <strong>
+                        Solicitud de compra
+                    </strong>
+
+                    <small>
+                        Solicitar materiales o servicios
+                    </small>
+
+                </span>
+
+                <span class="quick-action-arrow">
+                    →
+                </span>
+
+            </button>
+
+
+            <button
+                type="button"
+                class="quick-action"
+                data-page="inventario"
+            >
+
+                <span class="quick-action-icon">
+                    I
+                </span>
+
+                <span class="quick-action-content">
+
+                    <strong>
+                        Inventario
+                    </strong>
+
+                    <small>
+                        Consultar existencias
+                    </small>
+
+                </span>
+
+                <span class="quick-action-arrow">
+                    →
+                </span>
+
+            </button>
+
+        </div>
+
+    </section>
+
+</section>
+
+<!-- =========================================================
+     MÓDULOS DEL SISTEMA
+     Estructura base para navegación
+     ========================================================= -->
+
+<!-- ==================== VENTAS ==================== -->
+
+<!-- =========================================================
+     MÓDULO: LEADS
+     ========================================================= -->
+
+<section
+    id="page-leads"
+    class="page-view leads-page"
+    data-page-view="leads"
+    hidden
+>
+
+    <!-- ENCABEZADO DEL MÓDULO -->
+    <div class="module-header">
+
+        <div class="module-header-content">
+
+            <div class="module-title-group">
+
+                <span class="module-eyebrow">
+                    VENTAS
+                </span>
+
+                <h1 class="module-title">
+                    Leads
+                </h1>
+
+                <p class="module-description">
+                    Administra prospectos, contactos y oportunidades comerciales.
+                </p>
+
+            </div>
+
+            <div class="module-actions">
+
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    id="leads-export-button"
+                >
+                    <span class="btn-icon">↓</span>
+                    Exportar
+                </button>
+
+                <button
+                    type="button"
+                    class="btn btn-primary"
+                    id="new-lead-button"
+                >
+                    <span class="btn-icon">＋</span>
+                    Nuevo lead
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         RESUMEN DE LEADS
+         ===================================================== -->
+
+    <div class="stats-grid leads-stats-grid">
+
+        <article class="stat-card">
+
+            <div class="stat-card-icon">
+                👥
+            </div>
+
+            <div class="stat-card-content">
+
+                <span class="stat-card-label">
+                    Total de leads
+                </span>
+
+                <strong
+                    class="stat-card-value"
+                    id="leads-total-count"
+                >
+                    0
+                </strong>
+
+            </div>
+
+        </article>
+
+
+        <article class="stat-card">
+
+            <div class="stat-card-icon">
+                ◷
+            </div>
+
+            <div class="stat-card-content">
+
+                <span class="stat-card-label">
+                    Sin contactar
+                </span>
+
+                <strong
+                    class="stat-card-value"
+                    id="leads-uncontacted-count"
+                >
+                    0
+                </strong>
+
+            </div>
+
+        </article>
+
+
+        <article class="stat-card">
+
+            <div class="stat-card-icon">
+                $
+            </div>
+
+            <div class="stat-card-content">
+
+                <span class="stat-card-label">
+                    En cotización
+                </span>
+
+                <strong
+                    class="stat-card-value"
+                    id="leads-quote-count"
+                >
+                    0
+                </strong>
+
+            </div>
+
+        </article>
+
+
+        <article class="stat-card">
+
+            <div class="stat-card-icon">
+                ✓
+            </div>
+
+            <div class="stat-card-content">
+
+                <span class="stat-card-label">
+                    Convertidos
+                </span>
+
+                <strong
+                    class="stat-card-value"
+                    id="leads-converted-count"
+                >
+                    0
+                </strong>
+
+            </div>
+
+        </article>
+
+    </div>
+
+
+    <!-- =====================================================
+         PANEL PRINCIPAL
+         ===================================================== -->
+
+    <div class="module-card leads-main-card">
+
+        <!-- BARRA DE HERRAMIENTAS -->
+
+        <div class="module-toolbar">
+
+            <div class="toolbar-search">
+
+                <span class="search-icon">
+                    ⌕
+                </span>
+
+                <input
+                    type="search"
+                    id="leads-search"
+                    class="form-input"
+                    placeholder="Buscar por empresa, contacto, teléfono o correo..."
+                    autocomplete="off"
+                >
+
+            </div>
+
+
+            <div class="toolbar-filters">
+
+                <select
+                    id="leads-status-filter"
+                    class="form-select"
+                >
+                    <option value="">
+                        Todos los estados
+                    </option>
+
+                    <option value="sin-contactar">
+                        Sin contactar
+                    </option>
+
+                    <option value="no-contesto">
+                        No contestó
+                    </option>
+
+                    <option value="cotizacion">
+                        Cotización
+                    </option>
+
+                    <option value="ya-cliente">
+                        Ya cliente
+                    </option>
+                </select>
+
+
+                <select
+                    id="leads-source-filter"
+                    class="form-select"
+                >
+                    <option value="">
+                        Todas las fuentes
+                    </option>
+
+                    <option value="web">
+                        Sitio web
+                    </option>
+
+                    <option value="referido">
+                        Referido
+                    </option>
+
+                    <option value="redes-sociales">
+                        Redes sociales
+                    </option>
+
+                    <option value="llamada">
+                        Llamada
+                    </option>
+
+                    <option value="correo">
+                        Correo
+                    </option>
+
+                    <option value="prospeccion">
+                        Prospección
+                    </option>
+
+                    <option value="otro">
+                        Otro
+                    </option>
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             TABLA DE LEADS
+             ================================================= -->
+
+        <div class="table-wrapper">
+
+            <table
+                class="data-table leads-table"
+                id="leads-table"
+            >
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Empresa / contacto
+                        </th>
+
+                        <th>
+                            Contacto
+                        </th>
+
+                        <th>
+                            Fuente
+                        </th>
+
+                        <th>
+                            Estado
+                        </th>
+
+                        <th>
+                            Último contacto
+                        </th>
+
+                        <th>
+                            Próximo seguimiento
+                        </th>
+
+                        <th>
+                            Responsable
+                        </th>
+
+                        <th class="table-actions-column">
+                            Acciones
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="leads-table-body">
+
+                    <!--
+                        Los leads se generarán dinámicamente
+                        mediante JavaScript.
+                    -->
+
+                </tbody>
+
+            </table>
+
+
+            <!-- ESTADO VACÍO -->
+
+            <div
+                id="leads-empty-state"
+                class="empty-state"
+                hidden
+            >
+
+                <div class="empty-state-icon">
+                    👥
+                </div>
+
+                <h3>
+                    No hay leads registrados
+                </h3>
+
+                <p>
+                    Cuando agregues prospectos aparecerán aquí.
+                </p>
+
+                <button
+                    type="button"
+                    class="btn btn-primary"
+                    id="empty-new-lead-button"
+                >
+                    ＋ Agregar primer lead
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             PAGINACIÓN
+             ================================================= -->
+
+        <div class="table-footer">
+
+            <div
+                class="table-results-info"
+                id="leads-results-info"
+            >
+                Mostrando 0 leads
+            </div>
+
+
+            <div
+                class="pagination"
+                id="leads-pagination"
+            >
+
+                <button
+                    type="button"
+                    class="pagination-button"
+                    id="leads-prev-page"
+                    disabled
+                >
+                    ←
+                </button>
+
+                <span
+                    class="pagination-current"
+                    id="leads-current-page"
+                >
+                    1
+                </span>
+
+                <button
+                    type="button"
+                    class="pagination-button"
+                    id="leads-next-page"
+                    disabled
+                >
+                    →
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         MODAL: NUEVO / EDITAR LEAD
+         ===================================================== -->
+
+    <div
+        id="lead-form-modal"
+        class="module-modal"
+        hidden
+        aria-hidden="true"
+    >
+
+        <div class="module-modal-overlay"></div>
+
+        <div
+            class="module-modal-container"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="lead-form-modal-title"
+        >
+
+            <div class="module-modal-header">
+
+                <div>
+
+                    <span class="module-eyebrow">
+                        VENTAS
+                    </span>
+
+                    <h2
+                        id="lead-form-modal-title"
+                        class="module-modal-title"
+                    >
+                        Nuevo lead
+                    </h2>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="module-modal-close"
+                    id="close-lead-modal"
+                    aria-label="Cerrar"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <form
+                id="lead-form"
+                class="module-form"
+            >
+
+                <input
+                    type="hidden"
+                    id="lead-id"
+                    name="leadId"
+                >
+
+
+                <!-- DATOS DE LA EMPRESA -->
+
+                <div class="form-section">
+
+                    <div class="form-section-header">
+
+                        <h3>
+                            Información de la empresa
+                        </h3>
+
+                        <p>
+                            Datos principales del prospecto.
+                        </p>
+
+                    </div>
+
+
+                    <div class="form-grid form-grid-2">
+
+                        <div class="form-group">
+
+                            <label for="lead-company">
+                                Empresa
+                                <span class="required">
+                                    *
+                                </span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="lead-company"
+                                name="company"
+                                class="form-input"
+                                placeholder="Nombre de la empresa"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="lead-industry">
+                                Giro / industria
+                            </label>
+
+                            <input
+                                type="text"
+                                id="lead-industry"
+                                name="industry"
+                                class="form-input"
+                                placeholder="Ej. Automotriz, alimentos, logística..."
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="lead-city">
+                                Ciudad
+                            </label>
+
+                            <input
+                                type="text"
+                                id="lead-city"
+                                name="city"
+                                class="form-input"
+                                placeholder="Ciudad"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="lead-source">
+                                Fuente
+                                <span class="required">
+                                    *
+                                </span>
+                            </label>
+
+                            <select
+                                id="lead-source"
+                                name="source"
+                                class="form-select"
+                                required
+                            >
+
+                                <option value="">
+                                    Seleccionar fuente
+                                </option>
+
+                                <option value="web">
+                                    Sitio web
+                                </option>
+
+                                <option value="referido">
+                                    Referido
+                                </option>
+
+                                <option value="redes-sociales">
+                                    Redes sociales
+                                </option>
+
+                                <option value="llamada">
+                                    Llamada
+                                </option>
+
+                                <option value="correo">
+                                    Correo
+                                </option>
+
+                                <option value="prospeccion">
+                                    Prospección
+                                </option>
+
+                                <option value="otro">
+                                    Otro
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DATOS DEL CONTACTO -->
+
+                <div class="form-section">
+
+                    <div class="form-section-header">
+
+                        <h3>
+                            Persona de contacto
+                        </h3>
+
+                        <p>
+                            Información de la persona con quien se mantiene comunicación.
+                        </p>
+
+                    </div>
+
+
+                    <div class="form-grid form-grid-2">
+
+                        <div class="form-group">
+
+                            <label for="lead-contact-name">
+                                Nombre
+                                <span class="required">
+                                    *
+                                </span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="lead-contact-name"
+                                name="contactName"
+                                class="form-input"
+                                placeholder="Nombre completo"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="lead-position">
+                                Puesto
+                            </label>
+
+                            <input
+                                type="text"
+                                id="lead-position"
+                                name="position"
+                                class="form-input"
+                                placeholder="Ej. Compras, mantenimiento..."
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="lead-phone">
+                                Teléfono
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="lead-phone"
+                                name="phone"
+                                class="form-input"
+                                placeholder="Número telefónico"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="lead-email">
+                                Correo electrónico
+                            </label>
+
+                            <input
+                                type="email"
+                                id="lead-email"
+                                name="email"
+                                class="form-input"
+                                placeholder="correo@empresa.com"
+                            >
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SEGUIMIENTO -->
+
+                <div class="form-section">
+
+                    <div class="form-section-header">
+
+                        <h3>
+                            Seguimiento comercial
+                        </h3>
+
+                        <p>
+                            Información inicial para organizar el seguimiento.
+                        </p>
+
+                    </div>
+
+
+                    <div class="form-grid form-grid-2">
+
+                        <div class="form-group">
+
+                            <label for="lead-status">
+                                Estado
+                                <span class="required">
+                                    *
+                                </span>
+                            </label>
+
+                            <select
+                                id="lead-status"
+                                name="status"
+                                class="form-select"
+                                required
+                            >
+
+                                <option value="sin-contactar">
+                                    Sin contactar
+                                </option>
+
+                                <option value="no-contesto">
+                                    No contestó
+                                </option>
+
+                                <option value="cotizacion">
+                                    Cotización
+                                </option>
+
+                                <option value="ya-cliente">
+                                    Ya cliente
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="lead-responsible">
+                                Responsable
+                            </label>
+
+                            <input
+                                type="text"
+                                id="lead-responsible"
+                                name="responsible"
+                                class="form-input"
+                                placeholder="Responsable del seguimiento"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="lead-last-contact">
+                                Último contacto
+                            </label>
+
+                            <input
+                                type="date"
+                                id="lead-last-contact"
+                                name="lastContact"
+                                class="form-input"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="lead-next-followup">
+                                Próximo seguimiento
+                            </label>
+
+                            <input
+                                type="date"
+                                id="lead-next-followup"
+                                name="nextFollowup"
+                                class="form-input"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group form-group-full">
+
+                            <label for="lead-notes">
+                                Notas
+                            </label>
+
+                            <textarea
+                                id="lead-notes"
+                                name="notes"
+                                class="form-textarea"
+                                rows="4"
+                                placeholder="Agrega información relevante del prospecto..."
+                            ></textarea>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ACCIONES -->
+
+                <div class="module-modal-footer">
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        id="cancel-lead-form"
+                    >
+                        Cancelar
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary"
+                    >
+                        Guardar lead
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section
+    id="page-clientes"
+    class="page-view"
+    data-page-view="clientes"
+    hidden
+>
+    <!-- Módulo Clientes / Empresas -->
+</section>
+
+<section
+    id="page-cotizaciones"
+    class="page-view"
+    data-page-view="cotizaciones"
+    hidden
+>
+    <!-- Módulo Cotizaciones -->
+</section>
+
+<section
+    id="page-seguimientos"
+    class="page-view"
+    data-page-view="seguimientos"
+    hidden
+>
+    <!-- Módulo Seguimientos -->
+</section>
+
+
+<!-- ==================== COMPRAS ==================== -->
+
+<section
+    id="page-proveedores"
+    class="page-view"
+    data-page-view="proveedores"
+    hidden
+>
+    <!-- Módulo Proveedores -->
+</section>
+
+<section
+    id="page-solicitudes-compra"
+    class="page-view"
+    data-page-view="solicitudes-compra"
+    hidden
+>
+    <!-- Módulo Solicitudes de compra -->
+</section>
+
+<section
+    id="page-ordenes-compra"
+    class="page-view"
+    data-page-view="ordenes-compra"
+    hidden
+>
+    <!-- Módulo Órdenes de compra -->
+</section>
+
+<section
+    id="page-recepciones"
+    class="page-view"
+    data-page-view="recepciones"
+    hidden
+>
+    <!-- Módulo Recepciones -->
+</section>
+
+<section
+    id="page-inventario"
+    class="page-view"
+    data-page-view="inventario"
+    hidden
+>
+    <!-- Módulo Inventario -->
+</section>
+
+<section
+    id="page-matching"
+    class="page-view"
+    data-page-view="matching"
+    hidden
+>
+    <!-- Módulo 3-Way Matching -->
+</section>
+
+
+<!-- ==================== PROYECTOS ==================== -->
+
+<section
+    id="page-proyectos"
+    class="page-view"
+    data-page-view="proyectos"
+    hidden
+>
+    <!-- Módulo Proyectos -->
+</section>
+
+<section
+    id="page-tareas"
+    class="page-view"
+    data-page-view="tareas"
+    hidden
+>
+    <!-- Módulo Tareas / Progreso -->
+</section>
+
+<section
+    id="page-costos"
+    class="page-view"
+    data-page-view="costos"
+    hidden
+>
+    <!-- Módulo Costos -->
+</section>
+
+
+<!-- ==================== FINANZAS Y CONTABILIDAD ==================== -->
+
+<section
+    id="page-finanzas"
+    class="page-view"
+    data-page-view="finanzas"
+    hidden
+>
+    <!-- Módulo Finanzas -->
+</section>
+
+<section
+    id="page-cuentas-por-cobrar"
+    class="page-view"
+    data-page-view="cuentas-por-cobrar"
+    hidden
+>
+    <!-- Módulo Cuentas por cobrar -->
+</section>
+
+<section
+    id="page-cuentas-por-pagar"
+    class="page-view"
+    data-page-view="cuentas-por-pagar"
+    hidden
+>
+    <!-- Módulo Cuentas por pagar -->
+</section>
+
+<section
+    id="page-contabilidad"
+    class="page-view"
+    data-page-view="contabilidad"
+    hidden
+>
+    <!-- Módulo Contabilidad -->
+</section>
+
+<section
+    id="page-proyecciones"
+    class="page-view"
+    data-page-view="proyecciones"
+    hidden
+>
+    <!-- Módulo Proyecciones -->
+</section>
+
+
+<!-- ==================== RECURSOS HUMANOS ==================== -->
+
+<section
+    id="page-personal"
+    class="page-view"
+    data-page-view="personal"
+    hidden
+>
+    <!-- Módulo Personal -->
+</section>
+
+<section
+    id="page-asistencias"
+    class="page-view"
+    data-page-view="asistencias"
+    hidden
+>
+    <!-- Módulo Asistencias -->
+</section>
+
+<section
+    id="page-contrataciones"
+    class="page-view"
+    data-page-view="contrataciones"
+    hidden
+>
+    <!-- Módulo Contrataciones -->
+</section>
+
+<section
+    id="page-nomina"
+    class="page-view"
+    data-page-view="nomina"
+    hidden
+>
+    <!-- Módulo Nómina -->
+</section>
+
+
+<!-- ==================== ADMINISTRACIÓN ==================== -->
+
+<section
+    id="page-usuarios"
+    class="page-view"
+    data-page-view="usuarios"
+    hidden
+>
+    <!-- Módulo Usuarios -->
+</section>
+
+<section
+    id="page-roles-permisos"
+    class="page-view"
+    data-page-view="roles-permisos"
+    hidden
+>
+    <!-- Módulo Roles y permisos -->
+</section>
+
+<section
+    id="page-configuracion"
+    class="page-view"
+    data-page-view="configuracion"
+    hidden
+>
+    <!-- Módulo Configuración -->
+</section>
+
+<section
+    id="page-auditoria"
+    class="page-view"
+    data-page-view="auditoria"
+    hidden
+>
+    <!-- Módulo Auditoría -->
+</section>
+
+
+            <!-- ======================================================
+                 FOOTER
+                 ====================================================== -->
+
+            <footer id="main-footer" class="main-footer">
+
+                <div>
+                    © 2026 Turistarán
+                </div>
+
+                <div>
+                    ERP & CRM
+                </div>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+
+    <!-- ==========================================================
+         MODALES GLOBALES
+         Los utilizaremos posteriormente con JavaScript.
+         ========================================================== -->
+
+    <!-- MODAL GENERAL -->
+
+    <div
+        id="global-modal"
+        class="modal"
+        hidden
+        aria-hidden="true"
+    >
+
+        <div class="modal-overlay"></div>
+
+        <div
+            class="modal-container"
+            role="dialog"
+            aria-modal="true"
+        >
+
+            <div class="modal-header">
+
+                <h2 id="modal-title">
+                    Modal
+                </h2>
+
+                <button
+                    id="modal-close"
+                    class="modal-close"
+                    type="button"
+                    aria-label="Cerrar"
+                >
+                    ×
+                </button>
+
+            </div>
+
+            <div
+                id="modal-body"
+                class="modal-body"
+            >
+            </div>
+
+            <div
+                id="modal-footer"
+                class="modal-footer"
+            >
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==========================================================
+         NOTIFICACIONES
+         ========================================================== -->
+
+    <div
+        id="notification-panel"
+        class="notification-panel"
+        hidden
+    >
+
+        <div class="notification-panel-header">
+
+            <h3>
+                Notificaciones
+            </h3>
+
+            <button
+                type="button"
+                id="mark-notifications-read"
+            >
+                Marcar todas como leídas
+            </button>
+
+        </div>
+
+        <div
+            id="notification-list"
+            class="notification-list"
+        >
+
+            <div class="empty-state">
+
+                <span class="empty-icon">
+                    🔔
+                </span>
+
+                <h4>
+                    Sin notificaciones
+                </h4>
+
+                <p>
+                    Las alertas del sistema aparecerán aquí.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==========================================================
+         MENÚ DE PERFIL
+         ========================================================== -->
+
+    <div
+        id="profile-menu"
+        class="profile-menu"
+        hidden
+    >
+
+        <div class="profile-menu-header">
+
+            <span class="user-avatar">
+                C
+            </span>
+
+            <div>
+
+                <strong>
+                    Carolina
+                </strong>
+
+                <small>
+                    Administrador
+                </small>
+
+            </div>
+
+        </div>
+
+        <div class="profile-menu-divider"></div>
+
+        <button
+            type="button"
+            data-page="configuracion"
+        >
+            ⚙️ Configuración
+        </button>
+
+        <button
+            type="button"
+            data-page="usuarios"
+        >
+            👤 Mi perfil
+        </button>
+
+        <div class="profile-menu-divider"></div>
+
+        <button
+            type="button"
+            id="logout-button"
+        >
+            ↪ Cerrar sesión
+        </button>
+
+    </div>
+
+
+    <!-- ==========================================================
+         SCRIPTS
+         
+         TODAVÍA NO LOS ACTIVAMOS.
+         En la siguiente parte crearemos app.js.
+         ========================================================== -->
+
+    <script src="js/app.js"></script>
+</body>
+</html>
