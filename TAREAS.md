@@ -2,7 +2,7 @@
 
 > Solo tareas de **desarrollo**. Las decisiones del plan (stack, estilo visual, alcance, etc.) están en `PLAN.md`, sección Decisiones.
 > Lo leen Héctor, Carolina y las IAs que los ayudan.
-> Generado el 2026-10-01. Todas las tareas están sin completar: no hay código ni repositorio verificado.
+> Generado el 2026-10-01. Actualizado el mismo día: T-01 completada en la rama local `codex/fundacion-repositorio`; repositorio verificado y acceso de Carolina confirmado por Héctor. El resto de tareas sigue pendiente.
 
 ## Cómo usar este archivo
 
@@ -14,7 +14,7 @@
 - **Dificultad (Propuesta):** Alta, Media o Baja; criterio en `PLAN.md`, sección Equipo y reparto.
 - No cambies un responsable ni una dependencia sin escribir el motivo aquí.
 
-**Total: 18 tareas** (0 completadas).
+**Total: 18 tareas** (1 completada; 17 pendientes).
 
 ## Vista por responsable
 
@@ -34,9 +34,10 @@ Ruta paralela: `T-01 → T-05 → T-06`.
 
 ### Héctor
 
-- [ ] T-01 🔓 · Crear el repositorio compartido y escribir la convención de ramas y commits en `CLAUDE.md` · Héctor · depende de: —
+- [x] T-01 🔓 · Crear el repositorio compartido y escribir la convención de ramas y commits en `CLAUDE.md` · Héctor · depende de: —
   - **Desbloquea a:** Carolina (T-05).
-  - **Requiere decisión:** D-08.
+  - **Requiere decisión:** D-08 (confirmada por Héctor el 2026-10-01).
+  - **Evidencia:** repositorio `HectorD20/Turistaran_CRM` verificado y descargado desde `main` (base `522e743`); acceso de Carolina confirmado por Héctor en esta conversación; convención en `CLAUDE.md`, sección 6.1. Cambios preparados localmente en `codex/fundacion-repositorio`, pendientes de publicación.
   - **Hecho cuando:**
     - Existe el repositorio y Héctor y Carolina tienen acceso.
     - La convención de ramas y commits está escrita en `CLAUDE.md`.

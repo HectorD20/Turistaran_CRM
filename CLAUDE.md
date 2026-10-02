@@ -38,7 +38,7 @@ El nombre "Turistarán" aparece en el HTML de referencia y está **Por confirmar
 
 - Aplicación web responsiva para móvil y desktop; sin app nativa. **Confirmado.**
 - Frontend React, backend Node.js + Express, base de datos PostgreSQL. **Propuesta** (D-07).
-- Un repositorio Git con ramas por módulo, por ejemplo `feature/leads`, `feature/ventas`. **Propuesta** (D-08). La convención final de ramas y commits se escribe aquí al terminar T-01.
+- Un repositorio Git compartido con ramas por módulo, por ejemplo `feature/leads`, `feature/ventas`. **Confirmado** (D-08, Héctor, 2026-10-01). Convención definida en la sección 6.1.
 - Nombres de campos en `snake_case`, como en `PLAN.md` (`lead_origen_id`, `obra_id`). **Propuesta.**
 - Idioma de la interfaz (español según el HTML de referencia), tipo de clave primaria y moneda: **Por confirmar.**
 
@@ -59,6 +59,17 @@ Si una regla choca con "la forma más simple de implementarlo", gana la regla.
 - Un cambio de responsable o de dependencia se anota en `TAREAS.md` con su motivo.
 - Un cambio de una decisión se anota en `PLAN.md` con su razón e impacto; no se reemplaza en silencio.
 - Checkpoint semanal fijo; el día está **Por confirmar**. **Propuesta.**
+
+### 6.1 Convención de ramas y commits (T-01)
+
+Confirmada por Héctor el 2026-10-01:
+
+- Repositorio compartido: https://github.com/HectorD20/Turistaran_CRM. Héctor confirmó que Carolina ya tiene permisos para trabajar.
+- Ramas por módulo: `feature/<modulo>`, en minúsculas y con guiones; por ejemplo `feature/ventas` o `feature/avance-obra`.
+- Para trabajo de Codex se usa `codex/<modulo-o-tarea>`; T-01 se prepara en `codex/fundacion-repositorio`.
+- Commits con formato `<tipo>: <descripcion breve>`, usando `feat:` para funcionalidad, `fix:` para correcciones y `docs:` para documentación. Ejemplo: `docs: definir convenciones y registrar T-01`.
+- Incluir el ID de la tarea en la descripción del commit cuando corresponda. Mantener cada cambio dentro de la tarea del responsable.
+- `main` es la rama predeterminada del repositorio y la base de T-01. Ya existe `Dev`; su papel en la integración está por confirmar y no se modifica en T-01.
 
 ## 7. Límites
 

@@ -9,19 +9,20 @@
 
 **Hito 0 — Fundación técnica.** Estado: 🟡
 
-- No hay repositorio, código ni PR verificables, así que no se puede confirmar que el hito haya iniciado.
-- La ventana propuesta originalmente (16–30 sep 2026) ya pasó. Fecha real de arranque: **Por confirmar**. Calendario por reprogramar (`PLAN.md`, sección Fases).
+- Repositorio verificado: https://github.com/HectorD20/Turistaran_CRM, rama predeterminada `main`, base `522e743`. Contiene los documentos de coordinación y los archivos de referencia `index.html` y `app.js`; esto no acredita el backend ni los módulos del plan.
+- T-01 completada en la rama local `codex/fundacion-repositorio`: acceso de Carolina confirmado por Héctor y convención escrita en `CLAUDE.md`, sección 6.1. Cambios pendientes de publicación; no hay PR creado.
+- La ventana propuesta originalmente (16–30 sep 2026) ya pasó. T-01 se trabajó el 2026-10-01; fecha de arranque del calendario y reprogramación pendientes (`PLAN.md`, sección Fases).
 
 ## Avance
 
 | Concepto | Valor | Evidencia |
 |---|---|---|
-| Tareas completadas | 0 de 18 | Ninguna tiene criterio verificado |
-| Hito 0 | 0 de 6 | — |
+| Tareas completadas | 1 de 18 | T-01: repositorio verificado, acceso confirmado por Héctor y convención en `CLAUDE.md` §6.1 (rama local) |
+| Hito 0 | 1 de 6 | T-01 |
 | Hito 1 | 0 de 5 | — |
 | Hito 2 | 0 de 4 | — |
 | Hito 3 | 0 de 3 | — |
-| Héctor | 0 de 9 | — |
+| Héctor | 1 de 9 | T-01 |
 | Carolina | 0 de 9 | — |
 
 ## Bloqueos activos
@@ -41,11 +42,12 @@ Son decisiones pendientes de `PLAN.md` (sección Decisiones).
 
 **Fecha: jueves 2026-10-01.** La disponibilidad de cada persona está **Por confirmar** (no se asume). Asignación **Propuesta**:
 
-- **Héctor:** T-01 (crear el repositorio y escribir la convención de ramas y commits). Es la única tarea sin dependencias.
-- **Carolina:** sin tareas de desarrollo desbloqueadas hasta que Héctor termine T-01. Cuando eso pase, le toca T-05, que además necesita cerradas D-07 y D-11.
+- **Héctor:** T-01 completada localmente. Sigue T-02, pendiente de confirmar D-07 (React, Node.js + Express y PostgreSQL). No se ha iniciado el backend.
+- **Carolina:** T-01 satisface la dependencia de T-05; los cambios de coordinación todavía deben compartirse. T-05 sigue pendiente de cerrar D-07 y D-11. Sus tareas no se modificaron.
 
 ## Registro diario
 
 | Fecha | Registro |
 |---|---|
-| 2026-10-01 | Se crearon los 5 documentos de coordinación a partir de la conversación de planeación. Se asignaron los nombres: Persona 1 = Héctor, Persona 2 = Carolina. Se repartieron las 18 tareas de desarrollo entre ambos, sin tareas compartidas y con lo más difícil a Héctor. Las decisiones y pendientes de plan se movieron a `PLAN.md`. No existe repositorio ni código verificable. |
+| 2026-10-01 | Registro original de planeación: se crearon los 5 documentos de coordinación y se repartieron las 18 tareas entre Héctor y Carolina. En ese registro todavía no se había verificado el repositorio; esa afirmación quedó desactualizada y se corrige en la entrada siguiente. |
+| 2026-10-01 | Se verificó `HectorD20/Turistaran_CRM` y se descargó `main` (base `522e743`) en esta carpeta. Héctor confirmó los permisos de Carolina y D-08. T-01 completada localmente: convención en `CLAUDE.md` §6.1 y checklist actualizado. Rama `codex/fundacion-repositorio`, sin publicación ni PR. D-07 mantiene bloqueada T-02. |
