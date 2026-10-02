@@ -1,7 +1,7 @@
 # CHECKLIST_ENTREGA.md
 
 > Criterios de aceptación del **desarrollo**, uno por cada "Hecho cuando" de `TAREAS.md`. Lo leen Héctor, Carolina y las IAs que los ayudan.
-> **T-01 verificada documentalmente el 2026-10-01; no se han realizado pruebas funcionales.** Un punto se marca solo con evidencia verificable (código, PR o prueba).
+> **T-01 verificada documentalmente y T-02 probada con PostgreSQL real el 2026-10-01.** Un punto se marca solo con evidencia verificable (código, PR o prueba).
 > Las decisiones y los pendientes de entrega final (hosting, aceptación, pruebas) están en `PLAN.md`, no aquí.
 > Generado el 2026-10-01.
 
@@ -10,7 +10,7 @@
 **Héctor**
 - [x] T-01 · El repositorio existe y Héctor y Carolina tienen acceso. Evidencia: `HectorD20/Turistaran_CRM`, base `522e743`; Héctor confirmó los permisos de Carolina el 2026-10-01.
 - [x] T-01 · La convención de ramas y commits está escrita en `CLAUDE.md`, sección 6.1, en la rama local `codex/fundacion-repositorio` (pendiente de publicación).
-- [ ] T-02 · El servidor backend arranca en local y se conecta a PostgreSQL sin errores
+- [x] T-02 · El servidor backend arranca en local y se conecta a PostgreSQL sin errores. Evidencia: `backend/`, `npm.cmd run db:check` (SELECT 1), `npm.cmd start` y respuestas correctas de `/api/health` y `/api/health/ready` en `127.0.0.1:3001`, contra la base local en puerto 55432. Verificada caída con HTTP 503 y recuperación, más 4 pruebas automatizadas aprobadas (2026-10-01).
 - [ ] T-03 · Las migraciones crean todas las tablas del modelo aprobado en una base de datos vacía
 - [ ] T-03 · `Obra` incluye `presupuesto`
 - [ ] T-03 · `Egreso` incluye `obra_id` y `etapa_id` opcionales

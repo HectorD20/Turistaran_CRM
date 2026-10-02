@@ -2,7 +2,7 @@
 
 > Solo tareas de **desarrollo**. Las decisiones del plan (stack, estilo visual, alcance, etc.) están en `PLAN.md`, sección Decisiones.
 > Lo leen Héctor, Carolina y las IAs que los ayudan.
-> Generado el 2026-10-01. Actualizado el mismo día: T-01 completada en la rama local `codex/fundacion-repositorio`; repositorio verificado y acceso de Carolina confirmado por Héctor. El resto de tareas sigue pendiente.
+> Generado el 2026-10-01. Actualizado el mismo día: T-01 y T-02 completadas localmente; cambios en `codex/backend`, pendientes de publicación. El resto de tareas sigue pendiente.
 
 ## Cómo usar este archivo
 
@@ -14,7 +14,7 @@
 - **Dificultad (Propuesta):** Alta, Media o Baja; criterio en `PLAN.md`, sección Equipo y reparto.
 - No cambies un responsable ni una dependencia sin escribir el motivo aquí.
 
-**Total: 18 tareas** (1 completada; 17 pendientes).
+**Total: 18 tareas** (2 completadas; 16 pendientes).
 
 ## Vista por responsable
 
@@ -41,8 +41,9 @@ Ruta paralela: `T-01 → T-05 → T-06`.
   - **Hecho cuando:**
     - Existe el repositorio y Héctor y Carolina tienen acceso.
     - La convención de ramas y commits está escrita en `CLAUDE.md`.
-- [ ] T-02 · Setup de backend: proyecto Node.js + Express y conexión a PostgreSQL · Héctor · depende de: T-01
-  - **Requiere decisión:** D-07.
+- [x] T-02 · Setup de backend: proyecto Node.js + Express y conexión a PostgreSQL · Héctor · depende de: T-01
+  - **Requiere decisión:** D-07 (confirmada por Héctor el 2026-10-01).
+  - **Evidencia (2026-10-01):** implementación en `backend/`, rama `codex/backend`, basada en el commit local `2a983e1` de T-01. `npm.cmd run db:check` ejecutó `SELECT 1` contra PostgreSQL 18.6 local, base `turistaran_crm` en `127.0.0.1:55432`. `npm.cmd start` arrancó en `127.0.0.1:3001`; `/api/health` y `/api/health/ready` respondieron correctamente. Se verificó HTTP 503 al detener la base y recuperación al reiniciarla. Cuatro pruebas automatizadas aprobadas. Cambios pendientes de publicación.
   - **Hecho cuando:** el servidor backend arranca en local y se conecta a la base de datos PostgreSQL sin errores.
 - [ ] T-03 · Migraciones de las entidades del modelo (Lead, Cliente, Venta, Obra, Etapa, Egreso, Ingreso, Logística, Inventario y Usuario) · Héctor · depende de: T-02
   - **Requiere decisión:** D-13 y los puntos Por confirmar de `PLAN.md`, sección Arquitectura 5.4 (clave primaria, relación Venta↔Obra, campos de Usuario).

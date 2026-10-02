@@ -37,7 +37,7 @@ El nombre "Turistarán" aparece en el HTML de referencia y está **Por confirmar
 ## 4. Stack técnico
 
 - Aplicación web responsiva para móvil y desktop; sin app nativa. **Confirmado.**
-- Frontend React, backend Node.js + Express, base de datos PostgreSQL. **Propuesta** (D-07).
+- Frontend React, backend Node.js + Express, base de datos PostgreSQL. **Confirmado** (D-07, Héctor, 2026-10-01). El backend de T-02 se prepara en `backend/` con Node.js 24 o superior.
 - Un repositorio Git compartido con ramas por módulo, por ejemplo `feature/leads`, `feature/ventas`. **Confirmado** (D-08, Héctor, 2026-10-01). Convención definida en la sección 6.1.
 - Nombres de campos en `snake_case`, como en `PLAN.md` (`lead_origen_id`, `obra_id`). **Propuesta.**
 - Idioma de la interfaz (español según el HTML de referencia), tipo de clave primaria y moneda: **Por confirmar.**
