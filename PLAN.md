@@ -64,14 +64,19 @@ Cada persona construye de punta a punta (backend y frontend) los módulos que ti
 | D-04 | Sin fecha límite fija; 2–3 días/semana de dedicación. | Confirmado | — |
 | D-05 | Ahorro es una **vista calculada**, no una tabla de captura. | Confirmado (definición) / Propuesta (implementación) | — |
 | D-06 | **Egreso es la única fuente de verdad de gastos.** Avance de obra y Ahorro solo consultan egresos filtrados por `obra_id`/`etapa_id`. | Propuesta | T-12, T-14, T-16 |
-| D-07 | Stack: React (frontend), Node.js + Express (backend), PostgreSQL. | Propuesta | T-02, T-05 |
-| D-08 | Un repositorio Git con ramas por módulo (`feature/<modulo>`). La convención final se escribe en T-01. | Propuesta | T-01 |
+| D-07 | Stack: React (frontend), Node.js + Express (backend), PostgreSQL. | Confirmado por Héctor (2026-10-01) | — |
+| D-08 | Un repositorio Git con ramas por módulo (`feature/<modulo>`). Convención de ramas y commits en `CLAUDE.md`, sección 6.1. | Confirmado por Héctor (2026-10-01) | — |
 | D-09 | Una sola persona responsable por tarea; lo más difícil a Héctor. | Confirmado | — |
 | D-10 | Checkpoint semanal fijo aunque no haya fecha límite externa. Día por definir. | Propuesta | — |
 | D-11 | Estilo visual del dashboard. Hay dos propuestas publicadas (Duolingo y Revolut). | Por confirmar | T-05 |
 | D-12 | Alcance del HTML de referencia: ¿solo maqueta o amplía el proyecto? | Por confirmar | Alcance y estimaciones |
 | D-13 | Modelo de entidades de la sección Arquitectura aprobado por Héctor y Carolina. | Propuesta | T-03 |
 | D-14 | Alcance exacto de Avance de obra (lista cerrada de datos y pantallas), congelado antes de construirlo. | Por confirmar | T-16 |
+
+### Registro de decisiones
+
+- **2026-10-01 · D-07:** Héctor confirmó el stack propuesto y pidió preparar el backend. Se inicia T-02 en `backend/`, con Node.js 24 disponible localmente. La aprobación del stack elimina el bloqueo de T-02 y el bloqueo técnico de T-05; D-11 continúa pendiente para el frontend.
+- **2026-10-01 · D-08:** Héctor confirmó el acceso de Carolina y la convención de ramas por módulo y commits `feat:`, `fix:` y `docs:`. Se confirma la propuesta para cerrar T-01. Los cambios se preparan localmente en `codex/fundacion-repositorio`; el papel de la rama existente `Dev` sigue por confirmar. D-07 y las demás decisiones conservan su estado.
 
 ## 5. Arquitectura
 
